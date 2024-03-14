@@ -1,15 +1,19 @@
 import { FC } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 
-import { gray, white } from '@/constants/colors';
+import { gray, white } from '../constants/colors';
 
-type SearchInputProps = {
+export const SearchInputTestIds = {
+  container: 'search-input-container'
+};
+
+export type SearchInputProps = {
   searchQuery: string;
   setSearchQuery: (val: string) => void;
 };
 
 export const SearchInput: FC<SearchInputProps> = ({ searchQuery, setSearchQuery }) => (
-  <View style={styles.inputContainer}>
+  <View style={styles.inputContainer} testID={SearchInputTestIds.container}>
     <TextInput
       style={styles.input}
       placeholderTextColor={gray}
